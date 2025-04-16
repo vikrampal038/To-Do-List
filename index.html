@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- tailwind script link  -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- this is for icon link -->
+   <link rel="icon" href="Assets/todo icon.webp">
+
+    <!-- fontAwesome Link -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"/>
+
+    <!-- CSs file link -->
+    <link rel="stylesheet" href="style.css" />
+
+    <title>To-Do List</title>
+  </head>
+  <body>
+    <div id="container" class="min-h-screen flex justify-center items-start p-4">
+      <div
+        class="todo-App w-full max-w-4xl bg-[#122A23 rounded-xl shadow-2xl p-6 mt-8 "
+      >
+        <!-- heading section -->
+        <div class="flex flex-col sm:flex-row items-center justify-center mb-6">
+          <h1 class="text-white text-3xl sm:text-4xl text-center font-bold sm:text-left">
+            To-Do List
+          </h1>
+          <img class="w-24 sm:w-32 mt-4 sm:mt-0 ml-5" src="Assets/icon.png" alt="To-Do Icon" />
+        </div>
+
+        <!-- input section -->
+        <div class="Row w-full flex flex-col gap-2 mb-4 px-5">
+          <div class="flex flex-col sm:flex-row gap-2 w-full">
+            <input
+              id="taskInput"
+              class="flex-1 px-4 py-2 rounded-xl text-lg font-semibold focus:outline-none"
+              type="text"
+              placeholder="What Need To Be Done?"
+            />
+            <button
+              id="addBtn"
+              class="px-6 py-2 w-20 bg-sky-500 text-white text-[20px] font-bold rounded-xl hover:bg-sky-600 transition"
+            >
+              Add
+            </button>
+        </div>
+        <!-- text Error span -->
+        <span id="textError" class="text-l text-red-500 mt-1 ml-2 min-h-[24px]"></span>
+
+        <!-- Existing list container -->
+        <div class="result">
+          <ul id="list_container" class="space-y-2 my-4"></ul>
+
+          <!-- Task counter and remove section -->
+          <div class="flex flex-col sm:flex-row items-center justify-between gap-4 mt-6">
+            <div
+              class="bg-yellow-300 px-4 py-2 rounded text-xl font-semibold text-gray-800 text-center sm:text-left"
+            >
+              <span id="taskCount">0 of 0 tasks done</span>
+            </div>
+            <button
+              onclick="removeChecked()"
+              class="bg-sky-500 text-white px-4 py-2 font-semibold  rounded hover:bg-sky-600 text-lg flex items-center gap-1 transition"
+            >
+              Remove checked ✖
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ========== script section start here ========== -->
+
+    <!-- js file link -->
+    <script src="script.js"></script>
+
+    <!-- =========script section end here ========== -->
+  </body>
+</html>

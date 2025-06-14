@@ -28,7 +28,7 @@ function addTask() {
 
   } else {
     const li = document.createElement("li");
-    li.className = "flex items-center justify-between bg-[#284038] px-4 py-2 rounded border-y-4 border-gray-400";
+    li.className = "flex items-center  justify-between bg-[#284038] px-4 py-2 rounded border-y-4 border-gray-400";
 
     li.innerHTML = `
       <div class="flex items-center gap-2 w-full">
@@ -109,6 +109,14 @@ function updateCount() {
   const total = listContainer.querySelectorAll("li").length;
   const checked = listContainer.querySelectorAll("input[type='checkbox']:checked").length;
   taskCount.textContent = `${checked} of ${total} tasks done`;
+
+  const taskFooter = document.getElementById("taskFooter");
+
+  if (total > 0) {
+    taskFooter.classList.remove("hidden");
+  } else {
+    taskFooter.classList.add("hidden");
+  }
 }
 
 function saveData() {
